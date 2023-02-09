@@ -1,0 +1,75 @@
+// swift-tools-version: 5.6
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "opentelemetry-objc-extension",
+    platforms: [.macOS(.v10_13),
+                .iOS(.v11),
+                .tvOS(.v11),
+                .watchOS(.v3)],
+    products: [
+        .library(
+            name: "OtlpTraceExporterObjc",
+            type: .static,
+            targets: ["OtlpTraceExporterObjc"]
+        ),
+        .library(
+            name: "OpenTelemetrySdkObjc",
+            type: .static,
+            targets: ["OpenTelemetrySdkObjc"]
+        ),
+        .library(
+            name: "OpenTelemetryApiObjc",
+            targets: ["OpenTelemetryApiObjc"]
+        ),
+        .executable(name: "OTelDemo", targets: ["OTelDemo"])
+    ],
+    dependencies: [
+        .package(url:"https://github.com/open-telemetry/opentelemetry-swift", from: "1.4.0"),
+    ],
+    targets: [
+        .target(
+            name: "OtlpTraceExporterObjc",
+            dependencies: [
+                .product(name: "OpenTelemetryProtocolExporter", package:"opentelemetry-swift"),
+            ],
+            path: "Sources/",
+            sources: ["Exporters/"]
+        ),
+        .target(
+            name: "OpenTelemetrySdkObjc",
+            dependencies: [
+                .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift")
+            ],
+            path: "Sources/",
+            sources: ["OpenTelemetrySdk/"]
+        ),
+        .target(
+            name: "OpenTelemetryApiObjc",
+            dependencies: [
+                .product(name: "OpenTelemetryApi", package: "opentelemetry-swift")
+            ],
+            path: "Sources/",
+            sources: ["OpenTelemetryApi/"]
+        ),
+        .target(
+            name: "OTelDemo",
+            dependencies: [
+                .product(name: "OpenTelemetryApi", package:"opentelemetry-swift"),
+                .product(name: "OpenTelemetrySdk", package:"opentelemetry-swift"),
+                .product(name: "OpenTelemetryProtocolExporter", package:"opentelemetry-swift"),
+                .product(name: "StdoutExporter", package:"opentelemetry-swift")
+                
+            ],
+            path: "Examples/",
+            sources: ["OTelDemo/"]
+        ),
+        .testTarget(
+            name: "OpenTelemetryApiTest",
+            dependencies: ["OpenTelemetryApiObjc"],
+            path: "Tests/OpenTelemetryApiTest"
+        ),
+    ]
+)
