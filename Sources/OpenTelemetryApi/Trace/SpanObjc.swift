@@ -61,32 +61,10 @@ public class SpanObjc : NSObject {
     /// - Parameters:
     ///   - key: Key of the attribute.
     ///   - value: Attribute value.
-    
     @objc
     public func setAttribute(_ key: String, value: AttributeValueObjc?) {
         span.setAttribute(key: key, value: value?.attributeValue)
     }
-    
-    @objc
-    public func setAttribute(_ key: String, stringValue: String) {
-        span.setAttribute(key: key, value: stringValue)
-    }
-    
-    @objc
-    public func setAttribute(_ key: String, intValue: Int) {
-        span.setAttribute(key: key, value: intValue)
-    }
-    
-    @objc
-    public func setAttribute(_ key: String, doubleValue: Double) {
-        span.setAttribute(key: key, value: doubleValue)
-    }
-    
-    @objc
-    public func setAttribute(_ key: String, boolValue: Bool) {
-        span.setAttribute(key: key, value: boolValue)
-    }
-
 
     /// Adds an event to the Span
     /// - Parameter name: the name of the event.
@@ -152,5 +130,52 @@ public class SpanObjc : NSObject {
     
     public init(_ span: Span) {
         self.span = span
+    }
+}
+
+@objc
+public extension SpanObjc {
+    
+    @objc
+    func setAttribute(_ key: String, stringValue: String) {
+        span.setAttribute(key: key, value: stringValue)
+    }
+    
+    @objc
+    func setAttribute(_ key: String, intValue: Int) {
+        span.setAttribute(key: key, value: intValue)
+    }
+    
+    @objc
+    func setAttribute(_ key: String, doubleValue: Double) {
+        span.setAttribute(key: key, value: doubleValue)
+    }
+    
+    @objc
+    func setAttribute(_ key: String, boolValue: Bool) {
+        span.setAttribute(key: key, value: boolValue)
+    }
+
+}
+
+@objc
+public extension SpanObjc {
+
+    /// Helper method that populates span properties from host and port
+    /// - Parameters:
+    ///   - hostName: Hostr name.
+    ///   - port: Port number.
+    @objc
+    func putHttpHostAttribute(_ hostName: String, port: Int) {
+        span.putHttpHostAttribute(string: hostName, int: port)
+    }
+    
+    /// Helper method that populates span properties from http status code
+    /// - Parameters:
+    ///   - statusCode: Http status code.
+    ///   - reasonPhrase: Http reason phrase.
+    @objc
+    func putHttpStatusCode(_ statusCode: Int, reasonPhrase: String) {
+        span.putHttpStatusCode(statusCode: statusCode, reasonPhrase: reasonPhrase)
     }
 }
