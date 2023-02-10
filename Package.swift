@@ -28,6 +28,10 @@ let package = Package(
             name: "URLSessionInstrumentationObjc",
             targets: ["URLSessionInstrumentationObjc"]
         ),
+        .library(
+            name: "ResourceExtensionObjc",
+            targets: ["ResourceExtensionObjc"]
+        ),
         .executable(name: "OTelDemo", targets: ["OTelDemo"])
     ],
     dependencies: [
@@ -65,6 +69,14 @@ let package = Package(
             ],
             path: "Sources/Instrumentation/URLSession",
             exclude: ["README.md"]
+        ),
+        .target(
+            name: "ResourceExtensionObjc",
+            dependencies: [
+                .byName(name: "OpenTelemetrySdkObjc"),
+                .product(name: "ResourceExtension", package: "opentelemetry-swift")
+            ],
+            path: "Sources/Instrumentation/SDKResourceExtension"
         ),
         .target(
             name: "OTelDemo",
