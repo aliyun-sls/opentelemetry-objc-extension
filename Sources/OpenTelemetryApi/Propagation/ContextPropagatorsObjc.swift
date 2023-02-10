@@ -11,12 +11,14 @@ import OpenTelemetryApi
 public class ContextPropagatorsObjc: NSObject {
     var contextPropagators: ContextPropagators
     
-    
+    @objc
     public var textMapPropagator: TextMapPropagatorObjc {
         get {
             return TextMapPropagatorObjc(contextPropagators.textMapPropagator)
         }
     }
+    
+    @objc
     public var textMapBaggagePropagator: TextMapBaggagePropagatorObjc {
         get {
             return TextMapBaggagePropagatorObjc(contextPropagators.textMapBaggagePropagator)

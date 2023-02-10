@@ -27,9 +27,9 @@ public class TextMapBaggagePropagatorObjc: NSObject {
     ///   - carrier: Object to set context on. Instance of this object will be passed to setter.
     ///   - setter: Action that will set name and value pair on the object.
     @objc
-    public func inject(baggage: BaggageObjc, carrier: Dictionary<String, String>, setter: SetterImpl) {
+    public func inject(_ baggage: BaggageObjc, carrier: NSMutableDictionary, setter: SetterImpl) {
         var dict: Dictionary<String, String> = Dictionary<String, String>()
-        textMapBaggagePropagator.inject(baggage: baggage.baggage, carrier: &dict, setter: InternalSetter(setter))
+        textMapBaggagePropagator.inject(baggage: baggage.baggage, carrier: &dict, setter: InternalSetter(setter, carrier: carrier))
     }
 
     /// Extracts span context from textual representation.
@@ -37,7 +37,7 @@ public class TextMapBaggagePropagatorObjc: NSObject {
     ///   - carrier: Object to extract context from. Instance of this object will be passed to the getter.
     ///   - getter: Function that will return string value of a key with the specified name.
     @objc
-    @discardableResult func extract(carrier: [String: String], getter: GetterImpl) -> BaggageObjc? {
+    @discardableResult func extract(_ carrier: [String: String], getter: GetterImpl) -> BaggageObjc? {
         if let baggage = textMapBaggagePropagator.extract(carrier: carrier, getter: InternalGetter(getter)) {
             return BaggageObjc(baggage)
         }
@@ -61,7 +61,7 @@ public protocol TextMapBaggagePropagatorImpl {
     ///   - spanContext: Span context to transmit over the wire.
     ///   - carrier: Object to set context on. Instance of this object will be passed to setter.
     ///   - setter: Action that will set name and value pair on the object.
-    func inject(_ baggage: BaggageObjc, carrier: [String: String], setter: SetterImpl)
+    func inject(_ baggage: BaggageObjc, carrier: NSMutableDictionary, setter: SetterImpl)
 
     /// Extracts span context from textual representation.
     /// - Parameters:
@@ -84,7 +84,8 @@ fileprivate class TextMapBaggagePropagatorWrapper: TextMapBaggagePropagator {
     }
 
     func inject<S>(baggage: Baggage, carrier: inout [String : String], setter: S) where S : Setter {
-        impl.inject(BaggageObjc(baggage), carrier: carrier, setter: (setter as! InternalSetter).impl)
+        let set = setter as! InternalSetter
+        impl.inject(BaggageObjc(baggage), carrier: set.carrier, setter: set.impl)
     }
 
     func extract<G>(carrier: [String : String], getter: G) -> Baggage? where G : Getter {

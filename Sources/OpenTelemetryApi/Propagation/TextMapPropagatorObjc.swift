@@ -27,16 +27,18 @@ public class TextMapPropagatorObjc: NSObject {
     ///   - spanContext: Span context to transmit over the wire.
     ///   - carrier: Object to set context on. Instance of this object will be passed to setter.
     ///   - setter: Action that will set name and value pair on the object.
-    func inject(spanContext: SpanContextObjc, carrier: [String: String], setter: SetterImpl) {
+    @objc
+    public func inject(_ spanContext: SpanContextObjc, carrier: NSMutableDictionary, setter: SetterImpl) {
         var dict: [String: String] = [String: String]()
-        textMapPropagator.inject(spanContext: spanContext.spanContext, carrier: &dict, setter: InternalSetter(setter))
+        textMapPropagator.inject(spanContext: spanContext.spanContext, carrier: &dict, setter: InternalSetter(setter, carrier: carrier))
     }
 
     /// Extracts span context from textual representation.
     /// - Parameters:
     ///   - carrier: Object to extract context from. Instance of this object will be passed to the getter.
     ///   - getter: Function that will return string value of a key with the specified name.
-    @discardableResult func extract(carrier: [String: String], getter: GetterImpl) -> SpanContextObjc? {
+    @objc
+    @discardableResult public func extract(_ carrier: [String: String], getter: GetterImpl) -> SpanContextObjc? {
         if let ctx = textMapPropagator.extract(carrier: carrier, getter: InternalGetter(getter)) {
             return SpanContextObjc(ctx)
         }
@@ -45,7 +47,7 @@ public class TextMapPropagatorObjc: NSObject {
     }
     
     @objc
-    public static func propagator(_ textMapPropagator: TextMapPropagatorImpl,_ setter: SetterImpl, _ getter: GetterImpl) -> TextMapPropagatorObjc {
+    public static func propagator(_ textMapPropagator: TextMapPropagatorImpl) -> TextMapPropagatorObjc {
         return TextMapPropagatorObjc(InternalTextMapPropagatorWrapper(textMapPropagator))
     }
 }
@@ -64,7 +66,8 @@ fileprivate class InternalTextMapPropagatorWrapper: TextMapPropagator {
     }
 
     func inject<S>(spanContext: SpanContext, carrier: inout [String : String], setter: S) where S : Setter {
-        impl.inject(SpanContextObjc(spanContext), carrier: carrier, setter: (setter as! InternalSetter).impl)
+        let set = setter as! InternalSetter
+        impl.inject(SpanContextObjc(spanContext), carrier: set.carrier, setter: set.impl)
     }
 
     func extract<G>(carrier: [String : String], getter: G) -> SpanContext? where G : Getter {
@@ -74,12 +77,14 @@ fileprivate class InternalTextMapPropagatorWrapper: TextMapPropagator {
 
 public class InternalSetter: Setter {
     public var impl: SetterImpl
-    public init(_ impl: SetterImpl) {
+    var carrier: NSMutableDictionary
+    public init(_ impl: SetterImpl, carrier: NSMutableDictionary) {
         self.impl = impl
+        self.carrier = carrier
     }
     
     public func set(carrier: inout [String : String], key: String, value: String) {
-        impl.set(carrier: carrier, key: key, value: value)
+        impl.set(self.carrier, key: key, value: value)
     }
 }
 
@@ -91,9 +96,8 @@ public class InternalGetter: Getter {
     }
     
     public func get(carrier: [String : String], key: String) -> [String]? {
-        return impl.get(carrier: carrier, key: key)
+        return impl.get(carrier, key: key)
     }
-    
 }
 
 @objc
@@ -102,7 +106,7 @@ public protocol SetterImpl {
     ///   - carrier:  Object to set context on.
     ///   - key: Name of the value to set.
     ///   - value: Value to set.
-    func set(carrier: [String: String], key: String, value: String)
+    func set(_ carrier: NSMutableDictionary, key: String, value: String)
 }
 
 @objc
@@ -110,7 +114,7 @@ public protocol GetterImpl {
     /// - Parameters:
     ///   - carrier: Object to extract context from.
     ///   - key: Name of the value to extract.
-    func get(carrier: [String: String], key: String) -> [String]?
+    func get(_ carrier: [String: String], key: String) -> [String]?
 }
 
 @objc
@@ -123,7 +127,7 @@ public protocol TextMapPropagatorImpl {
     ///   - spanContext: Span context to transmit over the wire.
     ///   - carrier: Object to set context on. Instance of this object will be passed to setter.
     ///   - setter: Action that will set name and value pair on the object.
-    func inject(_ spanContext: SpanContextObjc, carrier: [String: String], setter: SetterImpl)
+    func inject(_ spanContext: SpanContextObjc, carrier: NSMutableDictionary, setter: SetterImpl)
 
     /// Extracts span context from textual representation.
     /// - Parameters:

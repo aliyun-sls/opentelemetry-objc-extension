@@ -25,7 +25,7 @@ public class BaggageBuilderObjc: NSObject {
     ///  If called multiple times, only the last specified value will be used.
     /// - Parameter parent: the Baggage used as parent
     @objc
-    @discardableResult func setParent(_ parent: BaggageObjc?) -> Self {
+    @discardableResult public func setParent(_ parent: BaggageObjc?) -> Self {
         baggageBuilder.setParent(parent?.baggage)
         return self
     }
@@ -35,7 +35,7 @@ public class BaggageBuilderObjc: NSObject {
     /// BaggageManager.getCurrentContext()} at build() time will be used as
     /// parent.
     @objc
-    @discardableResult func setNoParent() -> Self {
+    @discardableResult public func setNoParent() -> Self {
         baggageBuilder.setNoParent()
         return self
     }
@@ -46,7 +46,7 @@ public class BaggageBuilderObjc: NSObject {
     ///   - value: the EntryValue to set for the given key.
     ///   - metadata: the EntryMetadata associated with this Entry.
     @objc
-    @discardableResult func put(key: EntryKeyObjc, value: EntryValueObjc, metadata: EntryMetadataObjc?) -> Self {
+    @discardableResult public func put(_ key: EntryKeyObjc, value: EntryValueObjc, metadata: EntryMetadataObjc?) -> Self {
         baggageBuilder.put(key: key.entryKey, value: value.entryValue, metadata: metadata?.entryMetadata)
         return self
     }
@@ -55,13 +55,14 @@ public class BaggageBuilderObjc: NSObject {
     /// - Parameter key: the EntryKey which will be removed.
     
     @objc
-    @discardableResult func remove(key: EntryKeyObjc) -> Self {
+    @discardableResult public func remove(_ key: EntryKeyObjc) -> Self {
         baggageBuilder.remove(key: key.entryKey)
         return self
     }
 
     /// Creates a Baggage from this builder.
-    func build() -> BaggageObjc {
+    @objc
+    public func build() -> BaggageObjc {
         return BaggageObjc(baggageBuilder.build())
     }
 }

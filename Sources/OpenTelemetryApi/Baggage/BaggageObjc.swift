@@ -21,12 +21,26 @@ public class BaggageObjc: NSObject {
         return BaggageBuilderObjc(OpenTelemetry.instance.baggageManager.baggageBuilder())
     }
 
-//    /// Returns an immutable collection of the entries in this Baggage. Order of
-//    /// entries is not guaranteed.
-//    func getEntries() -> [Entry]
-//
-//    ///  Returns the EntryValue associated with the given EntryKey.
-//    /// - Parameter key: entry key to return the value for.
-//    func getEntryValue(key: EntryKey) -> EntryValue?
+    /// Returns an immutable collection of the entries in this Baggage. Order of
+    /// entries is not guaranteed.
+    @objc
+    public func getEntries() -> [EntryObjc] {
+        var entries = [EntryObjc]()
+        for entry in baggage.getEntries() {
+            entries.append(EntryObjc(entry))
+        }
+        return entries
+    }
+
+    ///  Returns the EntryValue associated with the given EntryKey.
+    /// - Parameter key: entry key to return the value for.
+    @objc
+    public func getEntryValue(key: EntryKeyObjc) -> EntryValueObjc? {
+        if let value = baggage.getEntryValue(key: key.entryKey) {
+            return EntryValueObjc(value)
+        }
+        
+        return nil
+    }
     
 }

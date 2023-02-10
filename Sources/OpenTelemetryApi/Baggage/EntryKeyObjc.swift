@@ -16,12 +16,14 @@ public class EntryKeyObjc: NSObject {
     }
     
     /// The name of the key
+    @objc
     public var name: String {
         get {
             return self.entryKey.name
         }
     }
 
+    @objc
     public static func entryKey(_ name: String) -> EntryKeyObjc? {
         let key = EntryKey.init(name: name)
         guard let _ = key else {
