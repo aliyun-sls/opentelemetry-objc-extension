@@ -24,6 +24,10 @@ let package = Package(
             name: "OpenTelemetryApiObjc",
             targets: ["OpenTelemetryApiObjc"]
         ),
+        .library(
+            name: "URLSessionInstrumentationObjc",
+            targets: ["URLSessionInstrumentationObjc"]
+        ),
         .executable(name: "OTelDemo", targets: ["OTelDemo"])
     ],
     dependencies: [
@@ -53,6 +57,14 @@ let package = Package(
             ],
             path: "Sources/",
             sources: ["OpenTelemetryApi/"]
+        ),
+        .target(
+            name: "URLSessionInstrumentationObjc",
+            dependencies: [
+                .product(name: "URLSessionInstrumentation", package: "opentelemetry-swift")
+            ],
+            path: "Sources/Instrumentation/URLSession",
+            exclude: ["README.md"]
         ),
         .target(
             name: "OTelDemo",

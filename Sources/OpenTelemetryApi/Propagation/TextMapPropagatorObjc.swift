@@ -66,16 +66,48 @@ fileprivate class InternalTextMapPropagatorWrapper: TextMapPropagator {
     }
 
     func inject<S>(spanContext: SpanContext, carrier: inout [String : String], setter: S) where S : Setter {
-        let set = setter as! InternalSetter
+        guard let set = setter as? InternalSetter else {
+            let wrapper = SetterWrapper(setter)
+            let dictionary = NSMutableDictionary()
+            impl.inject(SpanContextObjc(spanContext), carrier: dictionary, setter: wrapper)
+            
+            for kv in dictionary {
+                carrier.updateValue(kv.value as! String, forKey: kv.key as! String)
+            }
+            return
+        }
+        
         impl.inject(SpanContextObjc(spanContext), carrier: set.carrier, setter: set.impl)
     }
 
     func extract<G>(carrier: [String : String], getter: G) -> SpanContext? where G : Getter {
-        return impl.extract(carrier, getter: (getter as! InternalGetter).impl)?.spanContext
+        guard let get = getter as? InternalGetter else {
+            let wrapper = GetterWrapper(getter)
+            return impl.extract(carrier, getter: wrapper)?.spanContext
+        }
+        
+        return impl.extract(carrier, getter: get.impl)?.spanContext
     }
 }
 
-public class InternalSetter: Setter {
+class SetterWrapper: SetterImpl {
+    public private(set) var setter: Setter
+    
+    public init(_ setter: Setter) {
+        self.setter = setter
+    }
+    
+    public func set(_ carrier: NSMutableDictionary, key: String, value: String) {
+        var cri = [String:String]()
+        setter.set(carrier: &cri, key: key, value: value)
+        for kv in cri {
+            carrier.setObject(kv.value, forKey: NSString.init(string: kv.key))
+        }
+    }
+}
+
+
+class InternalSetter: Setter {
     public var impl: SetterImpl
     var carrier: NSMutableDictionary
     public init(_ impl: SetterImpl, carrier: NSMutableDictionary) {
@@ -88,7 +120,20 @@ public class InternalSetter: Setter {
     }
 }
 
-public class InternalGetter: Getter {
+class GetterWrapper: GetterImpl {
+    
+    public private(set) var getter: Getter
+    
+    public init(_ getter: Getter) {
+        self.getter = getter
+    }
+    
+    func get(_ carrier: [String : String], key: String) -> [String]? {
+        return getter.get(carrier: carrier, key: key)
+    }
+}
+
+class InternalGetter: Getter {
     var impl: GetterImpl
     
     public init(_ impl: GetterImpl) {

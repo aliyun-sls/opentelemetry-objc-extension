@@ -84,11 +84,25 @@ fileprivate class TextMapBaggagePropagatorWrapper: TextMapBaggagePropagator {
     }
 
     func inject<S>(baggage: Baggage, carrier: inout [String : String], setter: S) where S : Setter {
-        let set = setter as! InternalSetter
+        guard let set = setter as? InternalSetter else {
+            let wrapper = SetterWrapper(setter)
+            let dictionary = NSMutableDictionary()
+            impl.inject(BaggageObjc(baggage), carrier: dictionary, setter: wrapper)
+            for kv in dictionary {
+                carrier.updateValue(kv.value as! String, forKey: kv.key as! String)
+            }
+            return
+        }
+        
         impl.inject(BaggageObjc(baggage), carrier: set.carrier, setter: set.impl)
     }
 
     func extract<G>(carrier: [String : String], getter: G) -> Baggage? where G : Getter {
-        return impl.extract(carrier, getter: (getter as! InternalGetter).impl)?.baggage
+        guard let get = getter as? InternalGetter else {
+            let wrapper = GetterWrapper(getter)
+            return impl.extract(carrier, getter: wrapper)?.baggage
+        }
+        
+        return impl.extract(carrier, getter: get.impl)?.baggage
     }
 }
