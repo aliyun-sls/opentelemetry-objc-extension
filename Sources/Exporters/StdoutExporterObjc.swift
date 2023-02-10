@@ -18,7 +18,7 @@ public class StdoutExporterObjc : SpanExporterObjc {
     }
     
     @objc
-    public static func exporter(_ isDebug: Bool = true) -> StdoutExporterObjc {
+    public static func stdoutExporter(_ isDebug: Bool = true) -> StdoutExporterObjc {
         return StdoutExporterObjc(isDebug)
     }
 }

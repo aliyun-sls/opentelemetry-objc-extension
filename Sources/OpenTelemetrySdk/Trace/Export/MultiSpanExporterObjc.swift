@@ -24,7 +24,7 @@ public class MultiSpanExporterObjc : SpanExporterObjc {
     }
     
     @objc
-    public static func exporter(_ spanExporters: Array<SpanExporterObjc>) -> MultiSpanExporterObjc {
+    public static func multiSpanExporter(_ spanExporters: Array<SpanExporterObjc>) -> MultiSpanExporterObjc {
         return MultiSpanExporterObjc(spanExporters: spanExporters)
     }
 
