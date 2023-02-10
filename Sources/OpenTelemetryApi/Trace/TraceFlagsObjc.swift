@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class TraceFlagsObjc: NSObject {
-    var traceFlags: TraceFlags
+    public private(set) var traceFlags: TraceFlags
     
     public init(_ traceFlags: TraceFlags) {
         self.traceFlags = traceFlags

@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class SpanKindObjc : NSObject {
-    var spanKind : SpanKind
+    public private (set) var spanKind : SpanKind
     
     @objc
     public static var INTERNAL: SpanKindObjc {

@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class TraceStateObjc: NSObject {
-    var traceState: TraceState
+    public private(set) var traceState: TraceState
     
     public init(_ traceState: TraceState) {
         self.traceState = traceState

@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class StatusObjc : NSObject {
-    var status: Status
+    public private(set) var status: Status
     
     public static var OK: StatusObjc {
         return StatusObjc(.ok)
@@ -42,7 +42,7 @@ public class StatusObjc : NSObject {
     }
     
     
-    init(_ status: Status) {
+    public init(_ status: Status) {
         self.status = status
     }
     

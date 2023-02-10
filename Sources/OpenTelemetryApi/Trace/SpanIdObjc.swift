@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class SpanIdObjc: NSObject {
-    var spanId: SpanId
+    public private(set) var spanId: SpanId
     
     public init(_ spanId: SpanId) {
         self.spanId = spanId

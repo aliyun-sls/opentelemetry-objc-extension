@@ -11,7 +11,6 @@ import OpenTelemetryProtocolExporter
 
 //@objcMembers
 public class OtlpConfigurationObjc : NSObject {
-    
     @objc
     public static let DefaultTimeoutInterval : TimeInterval = OtlpConfiguration.DefaultTimeoutInterval
     

@@ -9,7 +9,7 @@ import Foundation
 import OpenTelemetryApi
 
 public class TraceIdObjc : NSObject {
-    var traceId: TraceId
+    public var traceId: TraceId
     
     public init(_ traceId: TraceId) {
         self.traceId = traceId
