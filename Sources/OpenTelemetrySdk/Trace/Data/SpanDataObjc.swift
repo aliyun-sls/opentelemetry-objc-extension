@@ -61,9 +61,9 @@ public class SpanDataObjc : NSObject {
     }
 
     /// The resource of this Span.
-    @objc public var resource: ResourcesObjc {
+    @objc public var resource: ResourceObjc {
         get {
-            return ResourcesObjc(spanData.resource)
+            return ResourceObjc(spanData.resource)
         }
     }
 
@@ -247,7 +247,7 @@ public class SpanDataObjc : NSObject {
         return self
     }
 
-    @discardableResult public func settingResource(_ resource: ResourcesObjc) -> SpanDataObjc {
+    @discardableResult public func settingResource(_ resource: ResourceObjc) -> SpanDataObjc {
         spanData.settingResource(resource.resource)
         return self
     }

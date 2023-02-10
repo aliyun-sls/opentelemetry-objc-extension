@@ -37,7 +37,7 @@ public class TracerProviderBuilderObjc : NSObject {
     }
     
     @objc
-    public func with(resource: ResourcesObjc) -> Self {
+    public func with(resource: ResourceObjc) -> Self {
         _ = tracerProviderBuilder.with(resource: resource.resource)
         return self
     }

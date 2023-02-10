@@ -1,5 +1,5 @@
 //
-//  ResourcesObjc.swift
+//  ResourceObjc.swift
 //  
 //
 //  Created by gordon on 2023/2/9.
@@ -10,12 +10,12 @@ import OpenTelemetryApi
 import OpenTelemetryApiObjc
 import OpenTelemetrySdk
 
-public class ResourcesObjc : NSObject {
+public class ResourceObjc : NSObject {
     var resource: Resource
     
     @objc
-    public static var empty: ResourcesObjc {
-        return ResourcesObjc(attributes: Dictionary())
+    public static var empty: ResourceObjc {
+        return ResourceObjc(attributes: Dictionary())
     }
     
     @objc
@@ -42,17 +42,17 @@ public class ResourcesObjc : NSObject {
     }
     
     @objc
-    public static func resource(_ attributes: Dictionary<String, AttributeValueObjc>) -> ResourcesObjc {
-        return ResourcesObjc(attributes: attributes)
+    public static func resource(_ attributes: Dictionary<String, AttributeValueObjc>) -> ResourceObjc {
+        return ResourceObjc(attributes: attributes)
     }
     
     @objc
-    public func merge(_ other: ResourcesObjc) {
+    public func merge(_ other: ResourceObjc) {
         resource.attributes.merge(other.resource.attributes) { _, other in other }
     }
     
-    public func merging(_ other: ResourcesObjc) -> ResourcesObjc {
-        return ResourcesObjc(other.resource)
+    public func merging(_ other: ResourceObjc) -> ResourceObjc {
+        return ResourceObjc(other.resource)
     }
 
 }

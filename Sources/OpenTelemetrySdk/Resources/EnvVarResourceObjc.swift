@@ -11,13 +11,13 @@ import OpenTelemetrySdk
 public class EnvVarResourceObjc : NSObject {
     
     @objc
-    public static let resource = ResourcesObjc(EnvVarResource.resource)
+    public static let resource = ResourceObjc(EnvVarResource.resource)
     
     private override init() {}
     
     @objc
-    public static func get(environment: Dictionary<String, String> = ProcessInfo.processInfo.environment) -> ResourcesObjc {
-        return ResourcesObjc(EnvVarResource.get(environment: environment))
+    public static func get(environment: Dictionary<String, String> = ProcessInfo.processInfo.environment) -> ResourceObjc {
+        return ResourceObjc(EnvVarResource.get(environment: environment))
     }
     
 }
