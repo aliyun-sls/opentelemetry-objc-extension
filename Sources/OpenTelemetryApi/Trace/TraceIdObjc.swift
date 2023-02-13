@@ -20,6 +20,15 @@ public class TraceIdObjc : NSObject {
     public static func random() -> TraceIdObjc {
         return TraceIdObjc(TraceId.random())
     }
+
+    /// Returns a TraceId built from a lowercase base16 representation.
+    /// - Parameters:
+    ///   - hexString: the lowercase base16 representation.
+    ///   - offset: the offset in the buffer where the representation of the TraceId begins.
+    @objc
+    public static func traceId(_ hexString: String, offset: Int = 0) -> TraceIdObjc {
+        return TraceIdObjc(TraceId(fromHexString: hexString, withOffset: offset))
+    }
     
     /// Returns whether the TraceId is valid. A valid trace identifier is a 16-byte array with
     /// at least one non-zero byte.

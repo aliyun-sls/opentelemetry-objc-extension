@@ -11,14 +11,17 @@ import OpenTelemetryApi
 public class StatusObjc : NSObject {
     public private(set) var status: Status
     
+    @objc
     public static var OK: StatusObjc {
         return StatusObjc(.ok)
     }
     
+    @objc
     public static var UNSET: StatusObjc {
         return StatusObjc(.unset)
     }
     
+    @objc
     public static var ERROR: StatusObjc {
         return StatusObjc(.error(description: ""))
     }
@@ -46,5 +49,9 @@ public class StatusObjc : NSObject {
         self.status = status
     }
     
+    @objc
+    public static func error(_ description: String) -> StatusObjc {
+        return StatusObjc(.error(description: description))
+    }
     
 }

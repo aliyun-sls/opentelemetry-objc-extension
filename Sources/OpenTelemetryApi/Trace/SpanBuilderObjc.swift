@@ -30,7 +30,7 @@ public class SpanBuilderObjc : NSObject {
     ///
     /// - Parameter parent: the Span used as parent.
     @objc
-    public func setParent(_ parent: SpanObjc) -> Self {
+    @discardableResult public func setParent(_ parent: SpanObjc) -> Self {
         spanBuilder.setParent(parent.span)
         return self;
     }
@@ -50,7 +50,7 @@ public class SpanBuilderObjc : NSObject {
     ///
     /// - Parameter parent: the SpanContext used as parent.
     @objc
-    public func setParent(context: SpanContextObjc) -> Self {
+    @discardableResult public func setParent(context: SpanContextObjc) -> Self {
         spanBuilder.setParent(context.spanContext)
         return self;
     }
@@ -60,7 +60,7 @@ public class SpanBuilderObjc : NSObject {
     ///
     /// Observe that any previously set parent will be discarded.
     @objc
-    public func setNoParent() -> Self {
+    @discardableResult public func setNoParent() -> Self {
         spanBuilder.setNoParent()
         return self;
     }
@@ -69,7 +69,7 @@ public class SpanBuilderObjc : NSObject {
     ///
     /// - Parameter spanContext: the context of the linked Span
     @objc
-    public func addLink(_ spanContext: SpanContextObjc) -> Self {
+    @discardableResult public func addLink(_ spanContext: SpanContextObjc) -> Self {
         spanBuilder.addLink(spanContext: spanContext.spanContext)
         return self;
     }
@@ -79,7 +79,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - spanContext: the context of the linked Span
     ///   - attributes: the attributes of the Link
     @objc
-    public func addLink(_ spanContext: SpanContextObjc, attributes: Dictionary<String, AttributeValueObjc>) -> Self {
+    @discardableResult public func addLink(_ spanContext: SpanContextObjc, attributes: Dictionary<String, AttributeValueObjc>) -> Self {
         var attrs: [String: AttributeValue] = [String: AttributeValue]()
         for (k, v) in attributes {
             attrs.updateValue(v.attributeValue, forKey: k)
@@ -95,7 +95,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - key: the key for this attribute
     ///   - value: the value for this attribute
     @objc
-    public func setAttribute(_ key: String, stringValue: String) -> Self {
+    @discardableResult public func setAttribute(_ key: String, stringValue: String) -> Self {
         spanBuilder.setAttribute(key: key, value: stringValue)
         return self;
     }
@@ -106,7 +106,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - key: the key for this attribute
     ///   - value: the value for this attribute
     @objc
-    public func setAttribute(_ key: String, intValue: Int) -> Self {
+    @discardableResult public func setAttribute(_ key: String, intValue: Int) -> Self {
         spanBuilder.setAttribute(key: key, value: intValue)
         return self;
     }
@@ -117,7 +117,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - key: the key for this attribute
     ///   - value: the value for this attribute
     @objc
-    public func setAttribute(_ key: String, doubleValue: Double) -> Self {
+    @discardableResult public func setAttribute(_ key: String, doubleValue: Double) -> Self {
         spanBuilder.setAttribute(key: key, value: doubleValue)
         return self;
     }
@@ -128,7 +128,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - key: the key for this attribute
     ///   - value: the value for this attribute
     @objc
-    public func setAttribute(_ key: String, boolValue: Bool) -> Self {
+    @discardableResult public func setAttribute(_ key: String, boolValue: Bool) -> Self {
         spanBuilder.setAttribute(key: key, value: boolValue)
         return self;
     }
@@ -139,7 +139,7 @@ public class SpanBuilderObjc : NSObject {
     ///   - key: the key for this attribute
     ///   - value: the value for this attribute, pass nil to remove previous value
     @objc
-    public func setAttribute(_ key: String, value: AttributeValueObjc) -> Self {
+    @discardableResult public func setAttribute(_ key: String, value: AttributeValueObjc) -> Self {
         spanBuilder.setAttribute(key: key, value: value.attributeValue)
         return self;
     }
@@ -148,7 +148,7 @@ public class SpanBuilderObjc : NSObject {
     /// implementation will provide a default value Span.Kind#INTERNAL.
     /// - Parameter spanKind: the kind of the newly created Span
     @objc
-    public func setSpanKind(_ spanKind: SpanKindObjc) -> Self {
+    @discardableResult public func setSpanKind(_ spanKind: SpanKindObjc) -> Self {
         spanBuilder.setSpanKind(spanKind: spanKind.spanKind)
         return self;
     }
@@ -159,7 +159,7 @@ public class SpanBuilderObjc : NSObject {
     /// will use the timestamp value at #startSpan() time, which should be the default case.
     /// - Parameter startTimestamp: the explicit start timestamp of the newly created Span in nanos since epoch.
     @objc
-    public func setStartTime(_ time: Date) -> Self {
+    @discardableResult public func setStartTime(_ time: Date) -> Self {
         spanBuilder.setStartTime(time: time)
         return self;
     }
@@ -167,7 +167,7 @@ public class SpanBuilderObjc : NSObject {
     /// Sets the Span as the active Span in the current context when started.
     /// - Parameter active: If the span will be set as the activeSpan
     @objc
-    public func setActive(_ active: Bool) -> Self {
+    @discardableResult public func setActive(_ active: Bool) -> Self {
         spanBuilder.setActive(active)
         return self;
     }

@@ -16,7 +16,7 @@ public class TracerProviderObjc : NSObject {
     }
     
     @objc
-    public func get(instrumentationName: String, instrumentationVersion: String? = nil) -> TracerObjc {
+    public func get(_ instrumentationName: String, instrumentationVersion: String? = nil) -> TracerObjc {
         return TracerObjc(self.tracerProvider.get(instrumentationName: instrumentationName, instrumentationVersion: instrumentationVersion))
     }
 }

@@ -21,6 +21,15 @@ public class SpanIdObjc: NSObject {
         return SpanIdObjc(SpanId.random())
     }
     
+    /// Returns a SpanId built from a lowercase base16 representation.
+    /// - Parameters:
+    ///   - hexString: the lowercase base16 representation.
+    ///   - offset: srcOffset the offset in the buffer where the representation of the SpanId begins.
+    @objc
+    public static func spanId(_ hexString: String, offset: Int = 0) -> SpanIdObjc {
+        return SpanIdObjc(SpanId(fromHexString: hexString, withOffset: offset))
+    }
+    
     ///  Returns the base16 encoding of this SpanId.
     @objc
     public var hexString: String {

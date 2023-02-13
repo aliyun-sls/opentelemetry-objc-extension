@@ -11,11 +11,6 @@ let package = Package(
                 .watchOS(.v3)],
     products: [
         .library(
-            name: "OtlpTraceExporterObjc",
-            type: .static,
-            targets: ["OtlpTraceExporterObjc"]
-        ),
-        .library(
             name: "OpenTelemetrySdkObjc",
             type: .static,
             targets: ["OpenTelemetrySdkObjc"]
@@ -29,6 +24,14 @@ let package = Package(
             targets: ["URLSessionInstrumentationObjc"]
         ),
         .library(
+            name: "OpenTelemetryProtocolExporterObjc",
+            targets: ["OpenTelemetryProtocolExporterObjc"]
+        ),
+        .library(
+            name: "StdoutExporterObjc",
+            targets: ["StdoutExporterObjc"]
+        ),
+        .library(
             name: "ResourceExtensionObjc",
             targets: ["ResourceExtensionObjc"]
         ),
@@ -38,14 +41,6 @@ let package = Package(
         .package(url:"https://github.com/open-telemetry/opentelemetry-swift", from: "1.4.0"),
     ],
     targets: [
-        .target(
-            name: "OtlpTraceExporterObjc",
-            dependencies: [
-                .product(name: "OpenTelemetryProtocolExporter", package:"opentelemetry-swift"),
-            ],
-            path: "Sources/",
-            sources: ["Exporters/"]
-        ),
         .target(
             name: "OpenTelemetrySdkObjc",
             dependencies: [
@@ -61,6 +56,21 @@ let package = Package(
             ],
             path: "Sources/",
             sources: ["OpenTelemetryApi/"]
+        ),
+        .target(
+            name: "OpenTelemetryProtocolExporterObjc",
+            dependencies: [
+                .product(name: "OpenTelemetryProtocolExporter", package: "opentelemetry-swift")
+            ],
+            path: "Sources/Exporters/OpenTelemetryProtocol"
+        ),
+        .target(
+            name: "StdoutExporterObjc",
+            dependencies: [
+                .byName(name: "OpenTelemetrySdkObjc"),
+                .product(name: "StdoutExporter", package: "opentelemetry-swift")
+            ],
+            path: "Sources/Exporters/Stdout"
         ),
         .target(
             name: "URLSessionInstrumentationObjc",
@@ -84,7 +94,8 @@ let package = Package(
                 .product(name: "OpenTelemetryApi", package:"opentelemetry-swift"),
                 .product(name: "OpenTelemetrySdk", package:"opentelemetry-swift"),
                 .product(name: "OpenTelemetryProtocolExporter", package:"opentelemetry-swift"),
-                .product(name: "StdoutExporter", package:"opentelemetry-swift")
+                .product(name: "StdoutExporter", package:"opentelemetry-swift"),
+                .product(name: "URLSessionInstrumentation", package:"opentelemetry-swift")
                 
             ],
             path: "Examples/",
