@@ -13,7 +13,7 @@ import OpenTelemetryApi
 import OpenTelemetrySdk
 import OpenTelemetryProtocolExporter
 import StdoutExporter
-import OpenTelemetryApiObjc
+import URLSessionInstrumentation
 
 let configuration = ClientConnection.Configuration.default(
     target: .hostAndPort("https://cn-beijing.log.aliyuncs.com", 10010),
@@ -25,8 +25,7 @@ let configuration = ClientConnection.Configuration.default(
 
 //let client = ClientConnection(configuration: configuration)
 
-let client = ClientConnection
-    .usingPlatformAppropriateTLS(for: MultiThreadedEventLoopGroup(numberOfThreads: 1))
+let client = ClientConnection.usingPlatformAppropriateTLS(for: MultiThreadedEventLoopGroup(numberOfThreads: 1))
     .connect(host: "cn-beijing.log.aliyuncs.com", port: 10010)
 
 let otlpTraceExporter = OtlpTraceExporter(
@@ -62,10 +61,20 @@ OpenTelemetry.registerTracerProvider(
 
 let tracer = OpenTelemetry.instance.tracerProvider.get(instrumentationName: "OTel Application", instrumentationVersion: "1.0.0")
 
+URLSessionInstrumentation(configuration: URLSessionInstrumentationConfiguration(
+    shouldInstrument: { request in
+        return true
+    })
+)
+
 //OpenTelemetry.registerPropagators(textPropagators: [TextMapPropagatorObjc(W3CTraceContextPropagator)], baggagePropagator: <#T##TextMapBaggagePropagator#>)
 
 
 func createSpans() {
+//    let spanBuilder = tracer.spanBuilder(spanName: "Main")
+//    spanBuilder.addLink(spanContext: <#T##SpanContext#>)
+//    let parentSpan1 = spanBuilder .setSpanKind(spanKind: .client).startSpan()
+    
     let parentSpan1 = tracer.spanBuilder(spanName: "Main").setSpanKind(spanKind: .client).startSpan()
     parentSpan1.setAttribute(key: "key1", value: "value1")
     OpenTelemetry.instance.contextProvider.setActiveSpan(parentSpan1)
@@ -90,8 +99,37 @@ func createSpans() {
 func doWork() {
     let childSpan = tracer.spanBuilder(spanName: "doWork").setSpanKind(spanKind: .client).startSpan()
     childSpan.setAttribute(key: "child_key1", value: "child_value1")
+    childSpan.addEvent(name: "start")
+    
+    childSpan.addEvent(name: "event with attributes",
+                       attributes: [ "key1": AttributeValue.string("value1"),
+                                     "key2": AttributeValue.double(2.2)
+                                   ]
+    )
+    
+    childSpan.addEvent(name: "end")
     Thread.sleep(forTimeInterval: Double.random(in: 0 ..< 10) / 100)
     childSpan.end()
+}
+
+func testURLSessionInstrumentation() {
+    let httpParent = tracer.spanBuilder(spanName: "testURLSeesionInstrumentation") .setActive(true).startSpan()
+    
+    var request = URLRequest(url: URL(string: "https://dns.alidns.com/resolve?name=www.taobao.com.&type=1")!)
+    request.httpMethod = "GET"
+    
+//    httpParent.status = .error(description: "\(error)")
+    
+//    let spanBuilder = tracer.spanBuilder(spanName: "GET /resource/catalog")
+//    let span = spanBuilder .setSpanKind(spanKind: .client).startSpan()
+//    span.setAttribute(key: "http.method", value: "GET")
+//    span.setAttribute(key: "http.url", value: "http url")
+    
+    URLSession.shared.dataTask(with: request) { data, response, error in
+        
+    }.resume()
+        
+    httpParent.end()
 }
 
 createSpans()
