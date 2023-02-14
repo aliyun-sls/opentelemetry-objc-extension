@@ -1,14 +1,21 @@
+// Copyright 2023 aliyun-sls Authors
 //
-//  File.swift
-//  
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 //
-//  Created by gordon on 2023/2/9.
+//      http://www.apache.org/licenses/LICENSE-2.0
 //
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 import Foundation
 
 
-public class SemanticAttributes: NSObject {
+public class SemanticAttributesObjc: NSObject {
     /**
     The full invoked ARN as provided on the `Context` passed to the function (`Lambda-Runtime-Invoked-Function-Arn` header on the `/runtime/invocation/next` applicable).
 
@@ -1263,7 +1270,7 @@ public class SemanticAttributes: NSObject {
     An identifier for the database management system (DBMS) product being used. See below for a list of well-known identifiers.
     */
     /// - Tag: otelDbSystemValues
-    @objc public class DbSystemValues: NSObject {
+    @objc public class DbSystemValuesObjc: NSObject {
         /**
         Some other SQL database. Fallback only. See notes.
         */
@@ -1581,7 +1588,7 @@ public class SemanticAttributes: NSObject {
     Describes the type of the operation that was performed on the data.
     */
     /// - Tag: otelFaasDocumentOperationValues
-    @objc public class FaasDocumentOperationValues: NSObject {
+    @objc public class FaasDocumentOperationValuesObjc: NSObject {
         /**
         When a new object is created.
         */
@@ -1610,7 +1617,7 @@ public class SemanticAttributes: NSObject {
     Kind of HTTP protocol used.
     */
     /// - Tag: otelHttpFlavorValues
-    @objc public class HttpFlavorValues: NSObject {
+    @objc public class HttpFlavorValuesObjc: NSObject {
         /**
         HTTP 1.0.
         */
@@ -1647,7 +1654,7 @@ public class SemanticAttributes: NSObject {
     The internet connection type currently being used by the host.
     */
     /// - Tag: otelNetHostConnectionTypeValues
-    @objc public class NetHostConnectionTypeValues: NSObject {
+    @objc public class NetHostConnectionTypeValuesObjc: NSObject {
         /**
         wifi.
         */
@@ -1684,7 +1691,7 @@ public class SemanticAttributes: NSObject {
     This describes more details regarding the connection.type. It may be the type of cell technology connection, but it could be used for describing details about a wifi connection.
     */
     /// - Tag: otelNetHostConnectionSubtypeValues
-    @objc public class NetHostConnectionSubtypeValues: NSObject {
+    @objc public class NetHostConnectionSubtypeValuesObjc: NSObject {
         /**
         GPRS.
         */
