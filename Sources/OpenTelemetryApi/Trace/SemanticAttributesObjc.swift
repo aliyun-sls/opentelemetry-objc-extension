@@ -1274,191 +1274,191 @@ public class SemanticAttributesObjc: NSObject {
         /**
         Some other SQL database. Fallback only. See notes.
         */
-        public static let otherSql = DbSystemValues("other_sql")
+        public static let otherSql = DbSystemValuesObjc("other_sql")
         /**
         Microsoft SQL Server.
         */
-        public static let mssql = DbSystemValues("mssql")
+        public static let mssql = DbSystemValuesObjc("mssql")
         /**
         MySQL.
         */
-        public static let mysql = DbSystemValues("mysql")
+        public static let mysql = DbSystemValuesObjc("mysql")
         /**
         Oracle Database.
         */
-        public static let oracle = DbSystemValues("oracle")
+        public static let oracle = DbSystemValuesObjc("oracle")
         /**
         IBM Db2.
         */
-        public static let db2 = DbSystemValues("db2")
+        public static let db2 = DbSystemValuesObjc("db2")
         /**
         PostgreSQL.
         */
-        public static let postgresql = DbSystemValues("postgresql")
+        public static let postgresql = DbSystemValuesObjc("postgresql")
         /**
         Amazon Redshift.
         */
-        public static let redshift = DbSystemValues("redshift")
+        public static let redshift = DbSystemValuesObjc("redshift")
         /**
         Apache Hive.
         */
-        public static let hive = DbSystemValues("hive")
+        public static let hive = DbSystemValuesObjc("hive")
         /**
         Cloudscape.
         */
-        public static let cloudscape = DbSystemValues("cloudscape")
+        public static let cloudscape = DbSystemValuesObjc("cloudscape")
         /**
         HyperSQL DataBase.
         */
-        public static let hsqldb = DbSystemValues("hsqldb")
+        public static let hsqldb = DbSystemValuesObjc("hsqldb")
         /**
         Progress Database.
         */
-        public static let progress = DbSystemValues("progress")
+        public static let progress = DbSystemValuesObjc("progress")
         /**
         SAP MaxDB.
         */
-        public static let maxdb = DbSystemValues("maxdb")
+        public static let maxdb = DbSystemValuesObjc("maxdb")
         /**
         SAP HANA.
         */
-        public static let hanadb = DbSystemValues("hanadb")
+        public static let hanadb = DbSystemValuesObjc("hanadb")
         /**
         Ingres.
         */
-        public static let ingres = DbSystemValues("ingres")
+        public static let ingres = DbSystemValuesObjc("ingres")
         /**
         FirstSQL.
         */
-        public static let firstsql = DbSystemValues("firstsql")
+        public static let firstsql = DbSystemValuesObjc("firstsql")
         /**
         EnterpriseDB.
         */
-        public static let edb = DbSystemValues("edb")
+        public static let edb = DbSystemValuesObjc("edb")
         /**
         InterSystems Caché.
         */
-        public static let cache = DbSystemValues("cache")
+        public static let cache = DbSystemValuesObjc("cache")
         /**
         Adabas (Adaptable Database System).
         */
-        public static let adabas = DbSystemValues("adabas")
+        public static let adabas = DbSystemValuesObjc("adabas")
         /**
         Firebird.
         */
-        public static let firebird = DbSystemValues("firebird")
+        public static let firebird = DbSystemValuesObjc("firebird")
         /**
         Apache Derby.
         */
-        public static let derby = DbSystemValues("derby")
+        public static let derby = DbSystemValuesObjc("derby")
         /**
         FileMaker.
         */
-        public static let filemaker = DbSystemValues("filemaker")
+        public static let filemaker = DbSystemValuesObjc("filemaker")
         /**
         Informix.
         */
-        public static let informix = DbSystemValues("informix")
+        public static let informix = DbSystemValuesObjc("informix")
         /**
         InstantDB.
         */
-        public static let instantdb = DbSystemValues("instantdb")
+        public static let instantdb = DbSystemValuesObjc("instantdb")
         /**
         InterBase.
         */
-        public static let interbase = DbSystemValues("interbase")
+        public static let interbase = DbSystemValuesObjc("interbase")
         /**
         MariaDB.
         */
-        public static let mariadb = DbSystemValues("mariadb")
+        public static let mariadb = DbSystemValuesObjc("mariadb")
         /**
         Netezza.
         */
-        public static let netezza = DbSystemValues("netezza")
+        public static let netezza = DbSystemValuesObjc("netezza")
         /**
         Pervasive PSQL.
         */
-        public static let pervasive = DbSystemValues("pervasive")
+        public static let pervasive = DbSystemValuesObjc("pervasive")
         /**
         PointBase.
         */
-        public static let pointbase = DbSystemValues("pointbase")
+        public static let pointbase = DbSystemValuesObjc("pointbase")
         /**
         SQLite.
         */
-        public static let sqlite = DbSystemValues("sqlite")
+        public static let sqlite = DbSystemValuesObjc("sqlite")
         /**
         Sybase.
         */
-        public static let sybase = DbSystemValues("sybase")
+        public static let sybase = DbSystemValuesObjc("sybase")
         /**
         Teradata.
         */
-        public static let teradata = DbSystemValues("teradata")
+        public static let teradata = DbSystemValuesObjc("teradata")
         /**
         Vertica.
         */
-        public static let vertica = DbSystemValues("vertica")
+        public static let vertica = DbSystemValuesObjc("vertica")
         /**
         H2.
         */
-        public static let h2 = DbSystemValues("h2")
+        public static let h2 = DbSystemValuesObjc("h2")
         /**
         ColdFusion IMQ.
         */
-        public static let coldfusion = DbSystemValues("coldfusion")
+        public static let coldfusion = DbSystemValuesObjc("coldfusion")
         /**
         Apache Cassandra.
         */
-        public static let cassandra = DbSystemValues("cassandra")
+        public static let cassandra = DbSystemValuesObjc("cassandra")
         /**
         Apache HBase.
         */
-        public static let hbase = DbSystemValues("hbase")
+        public static let hbase = DbSystemValuesObjc("hbase")
         /**
         MongoDB.
         */
-        public static let mongodb = DbSystemValues("mongodb")
+        public static let mongodb = DbSystemValuesObjc("mongodb")
         /**
         Redis.
         */
-        public static let redis = DbSystemValues("redis")
+        public static let redis = DbSystemValuesObjc("redis")
         /**
         Couchbase.
         */
-        public static let couchbase = DbSystemValues("couchbase")
+        public static let couchbase = DbSystemValuesObjc("couchbase")
         /**
         CouchDB.
         */
-        public static let couchdb = DbSystemValues("couchdb")
+        public static let couchdb = DbSystemValuesObjc("couchdb")
         /**
         Microsoft Azure Cosmos DB.
         */
-        public static let cosmosdb = DbSystemValues("cosmosdb")
+        public static let cosmosdb = DbSystemValuesObjc("cosmosdb")
         /**
         Amazon DynamoDB.
         */
-        public static let dynamodb = DbSystemValues("dynamodb")
+        public static let dynamodb = DbSystemValuesObjc("dynamodb")
         /**
         Neo4j.
         */
-        public static let neo4j = DbSystemValues("neo4j")
+        public static let neo4j = DbSystemValuesObjc("neo4j")
         /**
         Apache Geode.
         */
-        public static let geode = DbSystemValues("geode")
+        public static let geode = DbSystemValuesObjc("geode")
         /**
         Elasticsearch.
         */
-        public static let elasticsearch = DbSystemValues("elasticsearch")
+        public static let elasticsearch = DbSystemValuesObjc("elasticsearch")
         /**
         Memcached.
         */
-        public static let memcached = DbSystemValues("memcached")
+        public static let memcached = DbSystemValuesObjc("memcached")
         /**
         CockroachDB.
         */
-        public static let cockroachdb = DbSystemValues("cockroachdb")
+        public static let cockroachdb = DbSystemValuesObjc("cockroachdb")
 
         internal let value: String
 
@@ -1592,15 +1592,15 @@ public class SemanticAttributesObjc: NSObject {
         /**
         When a new object is created.
         */
-        public static let insert = FaasDocumentOperationValues("insert")
+        public static let insert = FaasDocumentOperationValuesObjc("insert")
         /**
         When an object is modified.
         */
-        public static let edit = FaasDocumentOperationValues("edit")
+        public static let edit = FaasDocumentOperationValuesObjc("edit")
         /**
         When an object is deleted.
         */
-        public static let delete = FaasDocumentOperationValues("delete")
+        public static let delete = FaasDocumentOperationValuesObjc("delete")
 
         internal let value: String
 
@@ -1621,23 +1621,23 @@ public class SemanticAttributesObjc: NSObject {
         /**
         HTTP 1.0.
         */
-        public static let http10 = HttpFlavorValues("1.0")
+        public static let http10 = HttpFlavorValuesObjc("1.0")
         /**
         HTTP 1.1.
         */
-        public static let http11 = HttpFlavorValues("1.1")
+        public static let http11 = HttpFlavorValuesObjc("1.1")
         /**
         HTTP 2.
         */
-        public static let http20 = HttpFlavorValues("2.0")
+        public static let http20 = HttpFlavorValuesObjc("2.0")
         /**
         SPDY protocol.
         */
-        public static let spdy = HttpFlavorValues("SPDY")
+        public static let spdy = HttpFlavorValuesObjc("SPDY")
         /**
         QUIC protocol.
         */
-        public static let quic = HttpFlavorValues("QUIC")
+        public static let quic = HttpFlavorValuesObjc("QUIC")
 
         internal let value: String
 
@@ -1658,23 +1658,23 @@ public class SemanticAttributesObjc: NSObject {
         /**
         wifi.
         */
-        public static let wifi = NetHostConnectionTypeValues("wifi")
+        public static let wifi = NetHostConnectionTypeValuesObjc("wifi")
         /**
         wired.
         */
-        public static let wired = NetHostConnectionTypeValues("wired")
+        public static let wired = NetHostConnectionTypeValuesObjc("wired")
         /**
         cell.
         */
-        public static let cell = NetHostConnectionTypeValues("cell")
+        public static let cell = NetHostConnectionTypeValuesObjc("cell")
         /**
         unavailable.
         */
-        public static let unavailable = NetHostConnectionTypeValues("unavailable")
+        public static let unavailable = NetHostConnectionTypeValuesObjc("unavailable")
         /**
         unknown.
         */
-        public static let unknown = NetHostConnectionTypeValues("unknown")
+        public static let unknown = NetHostConnectionTypeValuesObjc("unknown")
 
         internal let value: String
 
@@ -1695,87 +1695,87 @@ public class SemanticAttributesObjc: NSObject {
         /**
         GPRS.
         */
-        public static let gprs = NetHostConnectionSubtypeValues("gprs")
+        public static let gprs = NetHostConnectionSubtypeValuesObjc("gprs")
         /**
         EDGE.
         */
-        public static let edge = NetHostConnectionSubtypeValues("edge")
+        public static let edge = NetHostConnectionSubtypeValuesObjc("edge")
         /**
         UMTS.
         */
-        public static let umts = NetHostConnectionSubtypeValues("umts")
+        public static let umts = NetHostConnectionSubtypeValuesObjc("umts")
         /**
         CDMA.
         */
-        public static let cdma = NetHostConnectionSubtypeValues("cdma")
+        public static let cdma = NetHostConnectionSubtypeValuesObjc("cdma")
         /**
         EVDO Rel. 0.
         */
-        public static let evdo0 = NetHostConnectionSubtypeValues("evdo_0")
+        public static let evdo0 = NetHostConnectionSubtypeValuesObjc("evdo_0")
         /**
         EVDO Rev. A.
         */
-        public static let evdoA = NetHostConnectionSubtypeValues("evdo_a")
+        public static let evdoA = NetHostConnectionSubtypeValuesObjc("evdo_a")
         /**
         CDMA2000 1XRTT.
         */
-        public static let cdma20001xrtt = NetHostConnectionSubtypeValues("cdma2000_1xrtt")
+        public static let cdma20001xrtt = NetHostConnectionSubtypeValuesObjc("cdma2000_1xrtt")
         /**
         HSDPA.
         */
-        public static let hsdpa = NetHostConnectionSubtypeValues("hsdpa")
+        public static let hsdpa = NetHostConnectionSubtypeValuesObjc("hsdpa")
         /**
         HSUPA.
         */
-        public static let hsupa = NetHostConnectionSubtypeValues("hsupa")
+        public static let hsupa = NetHostConnectionSubtypeValuesObjc("hsupa")
         /**
         HSPA.
         */
-        public static let hspa = NetHostConnectionSubtypeValues("hspa")
+        public static let hspa = NetHostConnectionSubtypeValuesObjc("hspa")
         /**
         IDEN.
         */
-        public static let iden = NetHostConnectionSubtypeValues("iden")
+        public static let iden = NetHostConnectionSubtypeValuesObjc("iden")
         /**
         EVDO Rev. B.
         */
-        public static let evdoB = NetHostConnectionSubtypeValues("evdo_b")
+        public static let evdoB = NetHostConnectionSubtypeValuesObjc("evdo_b")
         /**
         LTE.
         */
-        public static let lte = NetHostConnectionSubtypeValues("lte")
+        public static let lte = NetHostConnectionSubtypeValuesObjc("lte")
         /**
         EHRPD.
         */
-        public static let ehrpd = NetHostConnectionSubtypeValues("ehrpd")
+        public static let ehrpd = NetHostConnectionSubtypeValuesObjc("ehrpd")
         /**
         HSPAP.
         */
-        public static let hspap = NetHostConnectionSubtypeValues("hspap")
+        public static let hspap = NetHostConnectionSubtypeValuesObjc("hspap")
         /**
         GSM.
         */
-        public static let gsm = NetHostConnectionSubtypeValues("gsm")
+        public static let gsm = NetHostConnectionSubtypeValuesObjc("gsm")
         /**
         TD-SCDMA.
         */
-        public static let tdScdma = NetHostConnectionSubtypeValues("td_scdma")
+        public static let tdScdma = NetHostConnectionSubtypeValuesObjc("td_scdma")
         /**
         IWLAN.
         */
-        public static let iwlan = NetHostConnectionSubtypeValues("iwlan")
+        public static let iwlan = NetHostConnectionSubtypeValuesObjc("iwlan")
         /**
         5G NR (New Radio).
         */
-        public static let nr = NetHostConnectionSubtypeValues("nr")
+        public static let nr = NetHostConnectionSubtypeValuesObjc("nr")
         /**
         5G NRNSA (New Radio Non-Standalone).
         */
-        public static let nrnsa = NetHostConnectionSubtypeValues("nrnsa")
+        public static let nrnsa = NetHostConnectionSubtypeValuesObjc("nrnsa")
         /**
         LTE CA.
         */
-        public static let lteCa = NetHostConnectionSubtypeValues("lte_ca")
+        public static let lteCa = NetHostConnectionSubtypeValuesObjc("lte_ca")
 
         internal let value : String
 
@@ -1807,23 +1807,23 @@ public class SemanticAttributesObjc: NSObject {
     The cloud provider of the invoked function.
     */
     /// - Tag: otelFaasInvokedProviderValues
-    @objc public class FaasInvokedProviderValues: NSObject {
+    @objc public class FaasInvokedProviderValuesObjc: NSObject {
         /**
         Alibaba Cloud.
         */
-        public static let alibabaCloud = FaasInvokedProviderValues("alibaba_cloud")
+        public static let alibabaCloud = FaasInvokedProviderValuesObjc("alibaba_cloud")
         /**
         Amazon Web Services.
         */
-        public static let aws = FaasInvokedProviderValues("aws")
+        public static let aws = FaasInvokedProviderValuesObjc("aws")
         /**
         Microsoft Azure.
         */
-        public static let azure = FaasInvokedProviderValues("azure")
+        public static let azure = FaasInvokedProviderValuesObjc("azure")
         /**
         Google Cloud Platform.
         */
-        public static let gcp = FaasInvokedProviderValues("gcp")
+        public static let gcp = FaasInvokedProviderValuesObjc("gcp")
 
         internal let value: String
 
