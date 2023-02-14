@@ -104,6 +104,132 @@
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OpenTelemetryProtocolExporterObjc"
+               BuildableName = "OpenTelemetryProtocolExporterObjc"
+               BlueprintName = "OpenTelemetryProtocolExporterObjc"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ResourceExtensionObjc"
+               BuildableName = "ResourceExtensionObjc"
+               BlueprintName = "ResourceExtensionObjc"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "StdoutExporterObjc"
+               BuildableName = "StdoutExporterObjc"
+               BlueprintName = "StdoutExporterObjc"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "URLSessionInstrumentationObjc"
+               BuildableName = "URLSessionInstrumentationObjc"
+               BlueprintName = "URLSessionInstrumentationObjc"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "opentelemetry-objc-extension_OTelDemo"
+               BuildableName = "opentelemetry-objc-extension_OTelDemo"
+               BlueprintName = "opentelemetry-objc-extension_OTelDemo"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OTelSample"
+               BuildableName = "OTelSample"
+               BlueprintName = "OTelSample"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "opentelemetry-objc-extension_OTelSample"
+               BuildableName = "opentelemetry-objc-extension_OTelSample"
+               BlueprintName = "opentelemetry-objc-extension_OTelSample"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "opentelemetry-objc-extension_ObjCSample"
+               BuildableName = "opentelemetry-objc-extension_ObjCSample"
+               BlueprintName = "opentelemetry-objc-extension_ObjCSample"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ObjCSample"
+               BuildableName = "ObjCSample"
+               BlueprintName = "ObjCSample"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -148,9 +274,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OTelDemo2"
-            BuildableName = "OTelDemo2"
-            BlueprintName = "OTelDemo2"
+            BlueprintIdentifier = "ObjCSample"
+            BuildableName = "ObjCSample"
+            BlueprintName = "ObjCSample"
             ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -174,9 +300,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OTelDemo2"
-            BuildableName = "OTelDemo2"
-            BlueprintName = "OTelDemo2"
+            BlueprintIdentifier = "ObjCSample"
+            BuildableName = "ObjCSample"
+            BlueprintName = "ObjCSample"
             ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>

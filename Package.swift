@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "opentelemetry-objc-extension",
+    defaultLocalization: "en",
     platforms: [.macOS(.v10_13),
                 .iOS(.v11),
                 .tvOS(.v11),
@@ -35,7 +36,8 @@ let package = Package(
             name: "ResourceExtensionObjc",
             targets: ["ResourceExtensionObjc"]
         ),
-        .executable(name: "OTelDemo", targets: ["OTelDemo"])
+        .executable(name: "OTelSample", targets: ["OTelSample"]),
+        .executable(name: "ObjCSample", targets: ["ObjCSample"])
     ],
     dependencies: [
         .package(url:"https://github.com/open-telemetry/opentelemetry-swift", from: "1.4.0"),
@@ -77,8 +79,7 @@ let package = Package(
             dependencies: [
                 .product(name: "URLSessionInstrumentation", package: "opentelemetry-swift")
             ],
-            path: "Sources/Instrumentation/URLSession",
-            exclude: ["README.md"]
+            path: "Sources/Instrumentation/URLSession"
         ),
         .target(
             name: "ResourceExtensionObjc",
@@ -88,8 +89,8 @@ let package = Package(
             ],
             path: "Sources/Instrumentation/SDKResourceExtension"
         ),
-        .target(
-            name: "OTelDemo",
+        .executableTarget(
+            name: "OTelSample",
             dependencies: [
                 .product(name: "OpenTelemetryApi", package:"opentelemetry-swift"),
                 .product(name: "OpenTelemetrySdk", package:"opentelemetry-swift"),
@@ -99,7 +100,26 @@ let package = Package(
                 
             ],
             path: "Examples/",
-            sources: ["OTelDemo/"]
+            sources: ["OTelSample/"]
+        ),
+        .target(
+            name: "ObjCSample",
+            dependencies: [
+                "OpenTelemetryApiObjc",
+                "OpenTelemetrySdkObjc",
+                "OpenTelemetryProtocolExporterObjc",
+                "StdoutExporterObjc",
+                "ResourceExtensionObjc",
+                "URLSessionInstrumentationObjc"
+            ],
+            path: "Examples/",
+            exclude: [
+                "ObjCSample/ObjCSample/Base.lproj/LaunchScreen.storyboard",
+                "ObjCSample/ObjCSample/Base.lproj/Main.storyboard",
+                "ObjCSample/ObjCSample/Assets.xcassets",
+                "ObjCSample/ObjCSample/Info.plist",
+            ],
+            sources: ["ObjCSample/ObjCSample/"]
         ),
         .testTarget(
             name: "OpenTelemetryApiTest",
