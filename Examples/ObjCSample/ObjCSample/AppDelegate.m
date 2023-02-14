@@ -21,7 +21,7 @@
 @import URLSessionInstrumentationObjc;
 @import StdoutExporterObjc;
 
-// TestURLSessionInstrumentation 的实现，供参考
+// TestURLSessionInstrumentation sample
 #pragma mark - URLSessionInstrumentation
 @interface TestURLSessionInstrumentation: NSObject<URLSessionInstrumentationConfigurationImpl>
 + (instancetype) instrumentation;
@@ -32,29 +32,29 @@
     return [[TestURLSessionInstrumentation alloc] init];
 }
 - (void)createdRequest:(NSURLRequest * _Nonnull)request span:(SpanObjc * _Nonnull)span {
-    // request 被创建时回调
+    // called when request was created
     [span setAttribute:@"createdRequest" stringValue:@"request created"];
 }
 - (void)injectCustomHeaders:(NSURLRequest * _Nonnull)request span:(SpanObjc * _Nullable)span {
-    // 注入自定义请求头
+    // inject your custom header here
     [(NSMutableURLRequest *)request addValue:@"custom header" forHTTPHeaderField:@"injectCustomHeaders"];
 }
 - (NSString * _Nullable)nameSpan:(NSURLRequest * _Nonnull)request {
-    // 重命名 Span
+    // rename your span name
     if ([request.URL.host containsString:@"dns.alidns.com"]) {
         return @"请求解析DNS";
     }
     return nil;
 }
 - (void)receivedError:(NSError * _Nonnull)error dataOrFile:(NSObject * _Nullable)dataOrFile span:(SpanObjc * _Nonnull)span {
-    // 接口失败时回调
+    // called when your request has error
 }
 - (void)receivedResponse:(NSURLResponse * _Nonnull)response dataOrFile:(NSObject * _Nullable)dataOrFile span:(SpanObjc * _Nonnull)span {
-    // 接口成功时回调
+    // called when your request was successful
     NSLog(@"receivedResponse: %@", dataOrFile);
 }
 - (BOOL)shouldInjectTracingHeaders:(NSURLRequest * _Nonnull)request {
-    // 注入 tracing headers
+    // inject your tracing headers
     return YES;
 }
 - (BOOL)shouldInstrument:(NSURLRequest * _Nonnull)request {
@@ -62,11 +62,11 @@
     return YES;
 }
 - (BOOL)shouldRecordPayload:(NSURLSession * _Nonnull)session {
-    // 是否采集请求体信息
+    // whether record this payload
     return YES;
 }
 - (void)spanCustomization:(NSURLRequest * _Nonnull)request spanBuilder:(SpanBuilderObjc * _Nonnull)spanBuilder {
-    // 自定义 Span 信息
+    // custom your span
     [spanBuilder setAttribute:@"spanCustomization" stringValue:@"customize span"];
 }
 @end
