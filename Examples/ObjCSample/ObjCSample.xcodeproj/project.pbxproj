@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F89A62BE299B229C00EFB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F89A62BD299B229C00EFB780 /* AppDelegate.m */; };
+		F89A62C1299B229C00EFB780 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F89A62C0299B229C00EFB780 /* SceneDelegate.m */; };
+		F89A62C4299B229C00EFB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89A62C3299B229C00EFB780 /* ViewController.m */; };
+		F89A62C7299B229C00EFB780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F89A62C5299B229C00EFB780 /* Main.storyboard */; };
+		F89A62C9299B229D00EFB780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89A62C8299B229D00EFB780 /* Assets.xcassets */; };
+		F89A62CC299B229D00EFB780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F89A62CA299B229D00EFB780 /* LaunchScreen.storyboard */; };
+		F89A62CF299B229D00EFB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F89A62CE299B229D00EFB780 /* main.m */; };
+		F89A62D7299B239D00EFB780 /* OpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62D6299B239D00EFB780 /* OpenTelemetryApi */; };
+		F89A62D9299B239D00EFB780 /* OpenTelemetryProtocolExporter in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62D8299B239D00EFB780 /* OpenTelemetryProtocolExporter */; };
+		F89A62DB299B239D00EFB780 /* OpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62DA299B239D00EFB780 /* OpenTelemetrySdk */; };
+		F89A62DD299B239D00EFB780 /* ResourceExtension in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62DC299B239D00EFB780 /* ResourceExtension */; };
+		F89A62DF299B239D00EFB780 /* StdoutExporter in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62DE299B239D00EFB780 /* StdoutExporter */; };
+		F89A62E1299B239D00EFB780 /* URLSessionInstrumentation in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62E0299B239D00EFB780 /* URLSessionInstrumentation */; };
+		F89A62E4299B249100EFB780 /* OpenTelemetryApiObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62E3299B249100EFB780 /* OpenTelemetryApiObjc */; };
+		F89A62E6299B249100EFB780 /* OpenTelemetryProtocolExporterObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62E5299B249100EFB780 /* OpenTelemetryProtocolExporterObjc */; };
+		F89A62E8299B249100EFB780 /* OpenTelemetrySdkObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62E7299B249100EFB780 /* OpenTelemetrySdkObjc */; };
+		F89A62EA299B249100EFB780 /* ResourceExtensionObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62E9299B249100EFB780 /* ResourceExtensionObjc */; };
+		F89A62EC299B249100EFB780 /* StdoutExporterObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62EB299B249100EFB780 /* StdoutExporterObjc */; };
+		F89A62EE299B249100EFB780 /* URLSessionInstrumentationObjc in Frameworks */ = {isa = PBXBuildFile; productRef = F89A62ED299B249100EFB780 /* URLSessionInstrumentationObjc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F89A62B9299B229C00EFB780 /* ObjCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89A62BC299B229C00EFB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F89A62BD299B229C00EFB780 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F89A62BF299B229C00EFB780 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		F89A62C0299B229C00EFB780 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F89A62C2299B229C00EFB780 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F89A62C3299B229C00EFB780 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F89A62C6299B229C00EFB780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F89A62C8299B229D00EFB780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F89A62CB299B229D00EFB780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F89A62CD299B229D00EFB780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F89A62CE299B229D00EFB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F89A62B6299B229C00EFB780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89A62EA299B249100EFB780 /* ResourceExtensionObjc in Frameworks */,
+				F89A62DB299B239D00EFB780 /* OpenTelemetrySdk in Frameworks */,
+				F89A62E8299B249100EFB780 /* OpenTelemetrySdkObjc in Frameworks */,
+				F89A62DF299B239D00EFB780 /* StdoutExporter in Frameworks */,
+				F89A62E4299B249100EFB780 /* OpenTelemetryApiObjc in Frameworks */,
+				F89A62E1299B239D00EFB780 /* URLSessionInstrumentation in Frameworks */,
+				F89A62EE299B249100EFB780 /* URLSessionInstrumentationObjc in Frameworks */,
+				F89A62EC299B249100EFB780 /* StdoutExporterObjc in Frameworks */,
+				F89A62D7299B239D00EFB780 /* OpenTelemetryApi in Frameworks */,
+				F89A62E6299B249100EFB780 /* OpenTelemetryProtocolExporterObjc in Frameworks */,
+				F89A62DD299B239D00EFB780 /* ResourceExtension in Frameworks */,
+				F89A62D9299B239D00EFB780 /* OpenTelemetryProtocolExporter in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F89A62B0299B229C00EFB780 = {
+			isa = PBXGroup;
+			children = (
+				F89A62BB299B229C00EFB780 /* ObjCSample */,
+				F89A62BA299B229C00EFB780 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F89A62BA299B229C00EFB780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F89A62B9299B229C00EFB780 /* ObjCSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F89A62BB299B229C00EFB780 /* ObjCSample */ = {
+			isa = PBXGroup;
+			children = (
+				F89A62BC299B229C00EFB780 /* AppDelegate.h */,
+				F89A62BD299B229C00EFB780 /* AppDelegate.m */,
+				F89A62BF299B229C00EFB780 /* SceneDelegate.h */,
+				F89A62C0299B229C00EFB780 /* SceneDelegate.m */,
+				F89A62C2299B229C00EFB780 /* ViewController.h */,
+				F89A62C3299B229C00EFB780 /* ViewController.m */,
+				F89A62C5299B229C00EFB780 /* Main.storyboard */,
+				F89A62C8299B229D00EFB780 /* Assets.xcassets */,
+				F89A62CA299B229D00EFB780 /* LaunchScreen.storyboard */,
+				F89A62CD299B229D00EFB780 /* Info.plist */,
+				F89A62CE299B229D00EFB780 /* main.m */,
+			);
+			path = ObjCSample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F89A62B8299B229C00EFB780 /* ObjCSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89A62D2299B229D00EFB780 /* Build configuration list for PBXNativeTarget "ObjCSample" */;
+			buildPhases = (
+				F89A62B5299B229C00EFB780 /* Sources */,
+				F89A62B6299B229C00EFB780 /* Frameworks */,
+				F89A62B7299B229C00EFB780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjCSample;
+			packageProductDependencies = (
+				F89A62D6299B239D00EFB780 /* OpenTelemetryApi */,
+				F89A62D8299B239D00EFB780 /* OpenTelemetryProtocolExporter */,
+				F89A62DA299B239D00EFB780 /* OpenTelemetrySdk */,
+				F89A62DC299B239D00EFB780 /* ResourceExtension */,
+				F89A62DE299B239D00EFB780 /* StdoutExporter */,
+				F89A62E0299B239D00EFB780 /* URLSessionInstrumentation */,
+				F89A62E3299B249100EFB780 /* OpenTelemetryApiObjc */,
+				F89A62E5299B249100EFB780 /* OpenTelemetryProtocolExporterObjc */,
+				F89A62E7299B249100EFB780 /* OpenTelemetrySdkObjc */,
+				F89A62E9299B249100EFB780 /* ResourceExtensionObjc */,
+				F89A62EB299B249100EFB780 /* StdoutExporterObjc */,
+				F89A62ED299B249100EFB780 /* URLSessionInstrumentationObjc */,
+			);
+			productName = ObjCSample;
+			productReference = F89A62B9299B229C00EFB780 /* ObjCSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F89A62B1299B229C00EFB780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					F89A62B8299B229C00EFB780 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = F89A62B4299B229C00EFB780 /* Build configuration list for PBXProject "ObjCSample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F89A62B0299B229C00EFB780;
+			packageReferences = (
+				F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */,
+				F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */,
+			);
+			productRefGroup = F89A62BA299B229C00EFB780 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F89A62B8299B229C00EFB780 /* ObjCSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F89A62B7299B229C00EFB780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89A62CC299B229D00EFB780 /* LaunchScreen.storyboard in Resources */,
+				F89A62C9299B229D00EFB780 /* Assets.xcassets in Resources */,
+				F89A62C7299B229C00EFB780 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F89A62B5299B229C00EFB780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89A62C4299B229C00EFB780 /* ViewController.m in Sources */,
+				F89A62BE299B229C00EFB780 /* AppDelegate.m in Sources */,
+				F89A62CF299B229D00EFB780 /* main.m in Sources */,
+				F89A62C1299B229C00EFB780 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F89A62C5299B229C00EFB780 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F89A62C6299B229C00EFB780 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F89A62CA299B229D00EFB780 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F89A62CB299B229D00EFB780 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F89A62D0299B229D00EFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F89A62D1299B229D00EFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F89A62D3299B229D00EFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPJRHMG6U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ObjCSample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aysls.cocoa.otel.ObjCSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F89A62D4299B229D00EFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPJRHMG6U;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ObjCSample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aysls.cocoa.otel.ObjCSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F89A62B4299B229C00EFB780 /* Build configuration list for PBXProject "ObjCSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89A62D0299B229D00EFB780 /* Debug */,
+				F89A62D1299B229D00EFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89A62D2299B229D00EFB780 /* Build configuration list for PBXNativeTarget "ObjCSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89A62D3299B229D00EFB780 /* Debug */,
+				F89A62D4299B229D00EFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.0;
+			};
+		};
+		F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aliyun-sls/opentelemetry-objc-extension";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F89A62D6299B239D00EFB780 /* OpenTelemetryApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = OpenTelemetryApi;
+		};
+		F89A62D8299B239D00EFB780 /* OpenTelemetryProtocolExporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = OpenTelemetryProtocolExporter;
+		};
+		F89A62DA299B239D00EFB780 /* OpenTelemetrySdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = OpenTelemetrySdk;
+		};
+		F89A62DC299B239D00EFB780 /* ResourceExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = ResourceExtension;
+		};
+		F89A62DE299B239D00EFB780 /* StdoutExporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = StdoutExporter;
+		};
+		F89A62E0299B239D00EFB780 /* URLSessionInstrumentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62D5299B239D00EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = URLSessionInstrumentation;
+		};
+		F89A62E3299B249100EFB780 /* OpenTelemetryApiObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = OpenTelemetryApiObjc;
+		};
+		F89A62E5299B249100EFB780 /* OpenTelemetryProtocolExporterObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = OpenTelemetryProtocolExporterObjc;
+		};
+		F89A62E7299B249100EFB780 /* OpenTelemetrySdkObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = OpenTelemetrySdkObjc;
+		};
+		F89A62E9299B249100EFB780 /* ResourceExtensionObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = ResourceExtensionObjc;
+		};
+		F89A62EB299B249100EFB780 /* StdoutExporterObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = StdoutExporterObjc;
+		};
+		F89A62ED299B249100EFB780 /* URLSessionInstrumentationObjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F89A62E2299B249000EFB780 /* XCRemoteSwiftPackageReference "opentelemetry-objc-extension" */;
+			productName = URLSessionInstrumentationObjc;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F89A62B1299B229C00EFB780 /* Project object */;
+}
